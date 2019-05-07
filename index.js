@@ -2,13 +2,9 @@ tf.setBackend('cpu');
 
 const model = tf.sequential();
 
-const hidden1 = tf.layers.dense({ units: 12, inputShape: [4], activation: 'sigmoid' });
-const hidden2 = tf.layers.dense({ units: 8, activation: 'sigmoid' });
-const output = tf.layers.dense({ units: 3, activation: 'softmax' });
-
-model.add(hidden1);
-model.add(hidden2);
-model.add(output);
+model.add(tf.layers.dense({ inputShape: [4], units: 4, activation: 'sigmoid' })) // Input 4x + 4 hidden
+//model.add(tf.layers.dense({ units: 8, activation: 'sigmoid' })) // 8 hidden
+model.add(tf.layers.dense({ units: 3, activation: 'softmax' })) // 3 output
 
 model.compile({ optimizer: tf.train.adam(0.07), loss: 'meanSquaredError' });
 
@@ -18,7 +14,7 @@ let trainDataY;
 let testDataX;
 let testDataY;
 
-let testRatio = 0.15;
+let testRatio = 0.45;
 let trainEpochs = 32;
 let ep = 0;
 
