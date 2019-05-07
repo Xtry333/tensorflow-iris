@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breast cancer classifier</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.4/dist/tf.js"></script>
+</head>
+
+<body>
+    <div>
+        <input id='inputTrainEpochs' min='1' type='number' value='1'>
+    </div>
+    <button onclick='train(inputTrainEpochs.value);'>Train</button>
+    <div style='background-color: lightgray;'>
+        <canvas id='cnvLoss' width='400px' height='200px'></canvas>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
